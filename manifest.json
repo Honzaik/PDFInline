@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "PDF Inline",
+  "short_name" : "PDF Inline",
+  "description": "Allows opening PDFs right in the browser instead of downloading.",
+  "version": "1.0",
+  "icons": {},
+  "permissions": [
+    "webRequest", "webRequestBlocking", "https://*/*", "http://*/*"
+  ],
+  "background": {
+    "scripts": [ "background.js" ],
+    "persistent": true
+  }
+}
