@@ -4,7 +4,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 
     let isPDF = false;
     details.responseHeaders.forEach(val => {
-      if (val.name == 'content-type' && val.value == 'application/pdf') {
+      if (val.name.toLowerCase() == 'content-type' && val.value.toLowerCase() == 'application/pdf') {
         isPDF = true;
       }
     });
@@ -13,7 +13,7 @@ chrome.webRequest.onHeadersReceived.addListener(
       return { responseHeaders: myResponseHeaders};
     }
 
-    let header = myResponseHeaders.find(e => e.name == 'content-disposition');
+    let header = myResponseHeaders.find(e => e.name.toLowerCase() == 'content-disposition');
 
     if (header) {
         console.log ('Modifying header');
